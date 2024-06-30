@@ -13,15 +13,15 @@ const ActivityCard = (props: any) => {
           </div>
           <div className="flex flex-col">
             <div className="flex flex-row justify-between">
-              <span className="font-semibold">Lugar</span>
-              <span className="font-normal italic text-sm">
+              <span className="font-semibold">Lugar: </span>
+              <span className="font-normal text-sm">
                {dataActivity.direction}
             </span>
             </div>
             <div className="flex flex-row justify-between">
-            <span className="font-semibold">Misiones</span>
+            <span className="font-semibold">Misiones: </span>
            
-            <span className="font-normal italic">
+            <span className="font-normal">
                {dataActivity.nComplete}/{dataActivity.nMissions}
             </span>
             </div>

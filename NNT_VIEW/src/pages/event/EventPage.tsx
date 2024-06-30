@@ -12,24 +12,29 @@ const EventPage = () => {
     return (
         <>
             <ModalMenu />
-            <div className="flex flex-col">
-                <img src={image47} alt="" className="px-10 pt-5 rounded-lg" />
-                <div className="m-auto text-xl">
-                    <h3><strong>Nombre del evento:</strong> Fiestita</h3>
-                    <p><strong>Fecha:</strong> 20-10-2024</p>
-                    <p><strong>Hora:</strong> 13:00</p>
-                    <p><strong>Lugar:</strong> La Paz</p>
-                    <p><strong>Costo:</strong> 25</p>
+            <div className="bg-whitePurple min-h-screen">
+                <div className="bg-whitePurple pt-20 flex flex-col">
+                    <img src={image47} alt="Evento" className="px-10 pt-5 rounded-lg" />
+                    <div className="m-auto text-xl p-5">
+                        <h3><strong>Nombre del evento:</strong> Fiestita</h3>
+                        <p><strong>Fecha:</strong> 20-10-2024</p>
+                        <p><strong>Hora:</strong> 13:00</p>
+                        <p><strong>Lugar:</strong> La Paz</p>
+                        <p><strong>Costo:</strong> 25 Bs.</p>
+                    </div>
+                </div>
+                <div className="flex-col items-center bg-whitePurple px-20 flex justify-center">
+                    <p className="font-bold text-2xl">Ubicacion</p>
+                    <img src={mapa} alt="Mapa" className="w-full h-auto max-w-md" />
+                </div>
+                <div className="bg-whitePurple mt-5 max-h-full pb-20">
+                    <div className="fixed bottom-10 right-10">
+                        <button className="bg-yellow text-2xl font-bold p-2 w-80 rounded-full shadow-xl">
+                            Participaré
+                        </button>
+                    </div>
                 </div>
             </div>
-            <div className="mb-28 mt-5 flex justify-center">
-                <img src={mapa} alt="" />
-            </div>
-
-            <div className="fixed bottom-10 right-10">
-                <button className="bg-yellow-300 text-2xl font-bold p-2 w-80 rounded-full shadow-xl">Participare</button>
-            </div>
-
         </>
     );
 }
