@@ -1,3 +1,35 @@
+import axios from "axios";
+import { SERVER_URL } from "../config/config";
+
+export const apiEvent = axios.create({
+  baseURL: SERVER_URL,
+  headers: {
+    "Content-Type": "application/json",
+  },
+});
+
+apiEvent.interceptors.request.use(
+  (config) => {
+    return config;
+  },
+  (error) => {
+    return Promise.reject(error);
+  }
+);
+
+export const getEventById = async (id:string) => {
+    const res = await apiEvent.get(`/events/${id}`         
+    );
+    return res.data;
+  };
+
+  export const getAllEvent = async () => {
+    const res = await apiEvent.get(`/events`         
+    );
+    return res.data;
+  };
+  
+
 export const getAllEvents = () => {
   const events = [
     {
