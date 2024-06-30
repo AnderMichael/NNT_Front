@@ -4,6 +4,7 @@ import ActivityCard from "./components/ActivityCard";
 import { getUser } from "../../api/usser";
 import { getEventById } from "../../api/event";
 import React from "react";
+import ModalMenu from "../ModalMenu";
 
 interface IdataRecentActivities {
   photo: string;
@@ -106,30 +107,37 @@ const ProfilePage = () => {
   }, []);
 
   return (
-    <div className="flex flex-col">
-      <InfoProfile dataUser={dataUser!} />
-      <span className="py-5 mx-5 font-bold text-2xl"> Logros</span>
-      {/* Achievements Section */}
-      <div className="mx-6">
-        <div className="flex justify-start mt-2 gap-4">
-          {dataUser.goals.map((goal: any) => (
-            <img className=" w-16 h-16 rounded-full" src={goal.url}></img>
+    <>
+      <ModalMenu />
+
+      <div className="bg-whitePurple flex flex-col">
+        <InfoProfile dataUser={dataUser!} />
+        <span className="py-5 mx-5 font-bold text-2xl"> Logros</span>
+        {/* Achievements Section */}
+
+        <div className="mx-6">
+          <div className="flex justify-start mt-2 gap-4">
+            {dataUser.goals.map((goal: any) => (
+              <img className=" w-16 h-16 rounded-full" src={goal.url}></img>
+            ))}
+          </div>
+
+
+        </div>
+        <span className="pt-5 mx-5 font-bold text-2xl"> Favorito</span>
+
+        <div className="p-5">
+          <ActivityCard dataActivity={dataFavoriteActivity} />
+        </div>
+        <span className=" mx-5 font-bold text-2xl"> Actividad Reciente</span>
+
+        <div className="pt-5 mx-5">
+          {dataRecentActivities.map((activity: EventData) => (
+            <ActivityCard dataActivity={activity} />
           ))}
         </div>
       </div>
-      <span className="pt-5 mx-5 font-bold text-2xl"> Favorito</span>
-
-      <div className="p-5">
-        <ActivityCard dataActivity={dataFavoriteActivity} />
-      </div>
-      <span className=" mx-5 font-bold text-2xl"> Actividad Reciente</span>
-
-      <div className="pt-5 mx-5">
-        {dataRecentActivities.map((activity: EventData) => (
-          <ActivityCard dataActivity={activity} />
-        ))}
-      </div>
-    </div>
+    </>
   );
 };
 
