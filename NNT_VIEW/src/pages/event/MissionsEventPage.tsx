@@ -1,6 +1,7 @@
 import React from "react";
 
-const MissionsPage = () => {
+const MissionsEventPage = () => {
+
     return(
         <>
             <div> Aqui estará las misiones o lo que planeemos poner jsjsjs</div>
@@ -9,4 +10,4 @@ const MissionsPage = () => {
     );
 }
 
-export default MissionsPage;
+export default MissionsEventPage;
