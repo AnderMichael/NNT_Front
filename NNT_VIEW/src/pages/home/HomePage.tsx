@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useEffect, useState } from "react";
 import { getAllEvents } from "../../api/event";
-import img from "../../assets/logo.png";
 import { useNavigate } from "react-router-dom";
 import ModalMenu from "../ModalMenu";
 import React from "react";

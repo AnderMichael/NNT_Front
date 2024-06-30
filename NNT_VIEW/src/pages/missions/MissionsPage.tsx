@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { getAllMissionsGeneral } from "../../api/mission";
 import ProgressBar from "./components/Progress";
 import Progress from "./components/Progress";
+import ModalMenu from "../ModalMenu";
 
 export interface IMission {
   _id: string;
@@ -24,7 +25,6 @@ const MissionsPage = () => {
     },
   ]);
 
-
   const fetchData = async () => {
     const data = await getAllMissionsGeneral();
     setDataMissions(data);
@@ -35,37 +35,23 @@ const MissionsPage = () => {
 
   return (
     <>
+    <ModalMenu />
+      <div className="pt-28"/>
       {dataMissions.map((mission: IMission) => (
-        <div className="border-2 border-red-300 p-4 rounded-lg mb-4 bg-slate-200">
+        <div className="border-2 border-red-300 p-4 rounded-3xl mb-4 bg-amber-50 mx-2">
           <div className="flex items-center">
             <div className="flex-grow w-full">
-            <Progress status={mission.status}/>
-              <div className="bg-gray-200 h-fit flex items-center justify-around">
-                <span className=" bg-yellow-300">
-                  {mission.statement}
-                </span>
-                
+              <Progress status={mission.status} />
+
+              <div className="mt-5 bg-gray-200 h-fit flex  flex-row items-center justify-around">
+                <span className=" bg-yellow-300 mr-5">{mission.statement}</span>
+                <img
+                  className="h-10 w-10"
+                  src="https://cdn-icons-png.flaticon.com/512/4363/4363595.png"
+                />
               </div>
-              <p className="mt-2">uwu</p>
             </div>
-            <div className="ml-4">
-              <button className="bg-yellow-400 p-2 rounded-full">
-                <svg
-                  className="w-6 h-6"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M4 8h16M4 16h16M4 12h8"
-                  ></path>
-                </svg>
-              </button>
-            </div>
+            <div className="ml-4"></div>
           </div>
         </div>
       ))}
