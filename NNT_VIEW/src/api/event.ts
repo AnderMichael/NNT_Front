@@ -47,6 +47,21 @@ export const getAllEvents = () => {
       name: "Concierto fino",
       photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpHZxNPX4i1IcKBGq6ZJE3NIJu7cJphbiDpQ&s",
     },
+    {
+      id: 4,
+      name: "Concierto fino",
+      photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpHZxNPX4i1IcKBGq6ZJE3NIJu7cJphbiDpQ&s",
+    },
+    {
+      id: 5,
+      name: "Concierto fino",
+      photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpHZxNPX4i1IcKBGq6ZJE3NIJu7cJphbiDpQ&s",
+    },
+    {
+      id: 6,
+      name: "Concierto fino",
+      photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpHZxNPX4i1IcKBGq6ZJE3NIJu7cJphbiDpQ&s",
+    }
   ];
   return events;
 };
