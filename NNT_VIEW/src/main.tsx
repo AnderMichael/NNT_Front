@@ -7,6 +7,7 @@ import RankingPage from "./pages/ranking/RankingPage";
 import MissionsPage from "./pages/missions/MissionsPage";
 import EventPage from "./pages/event/EventPage";
 import ProfilePage from "./pages/profile/ProfilePage";
+import MissionsEventPage from './pages/event/MissionsEventPage';
 
 const router = createBrowserRouter([
   {
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
   {
     path: "/event/:id",
     element: <EventPage />,
+  },
+  {
+    path: "/event/missions",
+    element: <MissionsEventPage />,
   },
   {
     path: "/profile",
