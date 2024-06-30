@@ -11,7 +11,7 @@ const HomePage = () => {
   return (
     <>
       <div> Aqui estará el home todo bonito</div>
-      <div className="flex flex-row p-3 ">
+      <div className="flex flex-row p-3  ">
         {" "}
         {events.map((event: any) => (
           <div className="bg-slate-100">

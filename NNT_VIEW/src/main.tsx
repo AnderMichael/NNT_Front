@@ -6,6 +6,7 @@ import HomePage from "./pages/home/HomePage";
 import RankingPage from "./pages/ranking/RankingPage";
 import MissionsPage from "./pages/missions/MissionsPage";
 import EventPage from "./pages/event/EventPage";
+import ProfilePage from "./pages/profile/ProfilePage";
 
 const router = createBrowserRouter([
   {
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
   {
     path: "/event/:id",
     element: <EventPage />,
+  },
+  {
+    path: "/profile",
+    element: <ProfilePage />,
   },
 ]);
 ReactDOM.createRoot(document.getElementById("root")!).render(
