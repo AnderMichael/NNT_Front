@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { getAllMissionsGeneral } from "../../api/mission";
+import ProgressBar from "./components/Progress";
+import Progress from "./components/Progress";
 
 export interface IMission {
   _id: string;
@@ -22,6 +24,7 @@ const MissionsPage = () => {
     },
   ]);
 
+
   const fetchData = async () => {
     const data = await getAllMissionsGeneral();
     setDataMissions(data);
@@ -33,19 +36,15 @@ const MissionsPage = () => {
   return (
     <>
       {dataMissions.map((mission: IMission) => (
-        <div className="border-2 border-red-300 p-4 rounded-lg mb-4">
+        <div className="border-2 border-red-300 p-4 rounded-lg mb-4 bg-slate-200">
           <div className="flex items-center">
-            <div className="flex-grow">
+            <div className="flex-grow w-full">
+            <Progress status={mission.status}/>
               <div className="bg-gray-200 h-fit flex items-center justify-around">
-                
-              <span className="w-3 h-3 bg-yellow-300 rounded-full"></span>
-
                 <span className=" bg-yellow-300">
                   {mission.statement}
                 </span>
-                <span className="w-3 h-3 bg-yellow-300 rounded-full"></span>
-                <span className="w-3 h-3 bg-yellow-300 rounded-full"></span>
-                <span className="w-3 h-3 bg-yellow-300 rounded-full"></span>
+                
               </div>
               <p className="mt-2">uwu</p>
             </div>
